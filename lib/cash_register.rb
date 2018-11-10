@@ -14,14 +14,12 @@ class CashRegister
     quantity.times do
       items << title
     end
-    end
     @total+=price*quantity
     @last_transaction_amount=@total
     @total
   end
 
   def apply_discount
-    # binding.pry
     if discount>0
       @discount=discount/100.to_f
       @total=@total-(@total*@discount)
